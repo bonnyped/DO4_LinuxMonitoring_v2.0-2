@@ -28,13 +28,13 @@ The russian version of the task can be found in the repository.
 
 ![linux_monitoringv2.0](misc/images/linux_monitoringv2.0.png)
 
-Planet Earth, nowadays.
+Planet Earth, today.
 
-The working day has just started and you’ve already been called to your superiors. They tell you that your buddy Seb hasn't shown up for work in four days. There is a risk that his task will not be finished on time.
-So, now it's your responsibility to figure out the monitoring in Linux, so that you can take over for your careless teammate if necessary.
+The working day has just started and you've already been called in to see your boss. They tell you that your buddy Seb hasn't come to work for four days. There is a risk that his task will not be completed on time.
+So it's up to you to find out about monitoring in Linux, so that you can take over for your careless colleague if necessary.
 
-You enter Seb's office, sit down in front of his computer and immediately open a suspiciously short file with his notes.
-While you look over the information that Seb has gathered, you can't stop thinking about the delicious lunch you've left in the break room...
+You enter Seb's office, sit down in front of his computer and immediately open a suspiciously small file containing his notes.
+As you read through the information Seb has gathered, you can't help but think about the delicious lunch you left in the break room...
 
 
 ## Chapter II
@@ -68,21 +68,21 @@ Each *dashboard* is universal, so it can be customised for a certain project.
 
 ## Chapter III
 
-- The written bash scripts must be in the src folder
-- For each task you must create a folder with the following name: **0x**, where x is the task number.
-- All scripts must be decomposed and split into several files
-- The main script file for each task must be named **main.sh**
-- All scripts should have checks for incorrect input (not all parameters specified, wrong format parameters, etc.)
-- All scripts must be run on a virtual machine *Ubuntu Server 20.04 LTS*
+- The written bash scripts must be in the src folder;
+- For each task you must create a folder with the following name: **0x**, where x is the task number;
+- All scripts must be decomposed and split into several files;
+- The main script file for each task must be named **main.sh**;
+- All scripts should have checks for incorrect input (not all parameters specified, wrong format parameters, etc.);
+- All scripts must be run on a virtual machine *Ubuntu Server 20.04 LTS*.
 
 
 ## Part 1. File generator
 
-After a brief look at the information found on Seb's computer, you walk into the break room and find out that Mike has taken your delicious sandwich, which you specially brought from home.
+After a quick look at the information you found on Seb's computer, you go to the break room to find that Mike has taken your delicious sandwich that you brought from home.
 
-You can't just let it slide, you have to prank him in return and teach him a lesson.
+You can't just let him get away with it, you have to play a prank on him and teach him a lesson.
 
-This will give you a chance to practice working with files in bash scripts. It may be useful in preparing a test environment to set up monitoring tasks.
+This will give you a chance to practise working with files in bash scripts. It can be useful in preparing a test environment for setting up monitoring tasks.
 
 **== Task ==**
 
@@ -110,7 +110,7 @@ Make a log file with data on all created folders and files (full path, creation 
 
 ## Part 2. File system clogging
 
-And now it's time to show Mike what a man whose sandwich has been stolen is capable of.
+And now it's time for Mike to have a taste of what a man who's had a sandwich stolen is capable of.
 
 **== Task ==**
 
@@ -188,10 +188,10 @@ The script is run with 1 parameter, which has a value of 1, 2, 3 or 4.
 
 Depending on the value of the parameter, output the following:
 
-1. All entries sorted by response code
-2. All unique IPs found in the entries
-3. All requests with errors (response code - 4xx or 5xxx)
-4. All unique IPs found among the erroneous requests
+1. All entries sorted by response code;
+2. All unique IPs found in the entries;
+3. All requests with errors (response code - 4xx or 5xxx);
+4. All unique IPs found among the erroneous requests.
 
 
 ## Part 6. **GoAccess**
@@ -211,16 +211,16 @@ Practice with the logs is over for now. It's time to monitor the state of the sy
 
 **== Task ==**
 
-##### Install and configure **Prometheus** and **Grafana** in virtual machine
-##### Access the **Prometheus** and **Grafana** web interfaces from a local machine
+##### Install and configure **Prometheus** and **Grafana** in virtual machine.
+##### Access the **Prometheus** and **Grafana** web interfaces from a local machine.
 
 ##### Add to the **Grafana** dashboard a display of CPU, available RAM, free space and the number of I/O operations on the hard disk.
 
-##### Run your bash script from [Part 2](#part-2-file-system-clogging)
-##### Check the hard disk load (disk space and read/write operations)
+##### Run your bash script from [Part 2](#part-2-file-system-clogging).
+##### Check the hard disk load (disk space and read/write operations).
 
-##### Install the **stress** utility and run the following command `stress -c 2 -i 1 -m 1 --vm-bytes 32M -t 10s`
-##### Check the hard disk, RAM and CPU load
+##### Install the **stress** utility and run the following command `stress -c 2 -i 1 -m 1 --vm-bytes 32M -t 10s`.
+##### Check the hard disk, RAM and CPU load.
 
 
 ## Part 8. A ready-made dashboard
@@ -232,12 +232,12 @@ Why not get a ready-made dashboard that has all the metrics you need?
 
 ##### Download the ready-made dashboard *Node Exporter Quickstart and Dashboard* from **Grafana Labs** official website.
 
-##### Run the same tests as in [Part 7](#part-7-prometheus-and-grafana)
+##### Run the same tests as in [Part 7](#part-7-prometheus-and-grafana).
 
-##### Start another virtual machine within the same network as the current one
-##### Run a network load test using **iperf3**
+##### Start another virtual machine within the same network as the current one.
+##### Run a network load test using **iperf3**.
 
-##### Check the network interface load
+##### Check the network interface load.
 
 
 ## Part 9. Bonus. Your own *node_exporter*
@@ -251,7 +251,7 @@ The page itself can be refreshed within a bash script or a program (in a loop), 
 
 ##### Change the **Prometheus** configuration file so it collects information from the page you created.
 
-##### Run the same tests as in [Part 7](#part-7-prometheus-and-grafana)
+##### Run the same tests as in [Part 7](#part-7-prometheus-and-grafana).
 
 
 💡 [Tap here](https://forms.yandex.ru/cloud/641818e069387223cba1286e/) **to leave your feedback on the project**. Product Team really tries to make your educational experience better.
