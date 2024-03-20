@@ -9,7 +9,6 @@ BLUE='\033[94m'
 NC='\033[0m'
 LOG_PLACEMENT="./"
 AVAILABLE_FREE_SPACE=$(($(df --output=avail / | tail -1) - 1048576))
-echo $AVAILABLE_FREE_SPACE
 FOLDER_SIZE=0
 FOLDER_NAME_SET="$1"
 FILE_NAME_SET=$(echo $2 | awk -F '.' '{printf $1}')

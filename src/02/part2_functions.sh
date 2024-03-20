@@ -6,7 +6,7 @@ START_IN_SECONDS=$ZERO
 function calculate_time {
     if [[ $START_IN_SECONDS -eq 0 ]]; then
         START_IN_SECONDS=$(date +%s)
-        START_TIME="$(date +%H):$(date +%M):$(date +%S)"
+        START_TIME="$(date +%Y)-$(date +%m)-$(date +%d) $(date +%H):$(date +%M):$(date +%S)"
     else
         END_IN_SECONDS=$(date +%s)
         EXECUTE_IN_SECONDS=$(($END_IN_SECONDS - $START_IN_SECONDS))
@@ -15,7 +15,7 @@ function calculate_time {
         MINUTES=$(($EXECUTE_IN_SECONDS / 60))
         ((EXECUTE_IN_SECONDS -= $MINUTES * 60))
         echo -e ${BLUE}"Script started: ${START_TIME}" | tee -a ${LOG_PLACEMENT}file.log
-        END_TIME="$(date +%H):$(date +%M):$(date +%S)"
+        END_TIME="$(date +%Y)-$(date +%m)-$(date +%d) $(date +%H):$(date +%M):$(date +%S)"
         echo "Script ended: ${END_TIME}" | tee -a ${LOG_PLACEMENT}file.log
         printf 'Script execute time: %.2d:%.2d:%.2d' ${HOURS} ${MINUTES} ${EXECUTE_IN_SECONDS} | tee -a ${LOG_PLACEMENT}file.log
         echo -e "${NC}"
