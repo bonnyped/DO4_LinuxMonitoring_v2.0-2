@@ -5,7 +5,7 @@
 if [[ $# -ne 1 ]]; then
     print
 fi
-if ! [[ $1 =~ ^[1234] ]]; then
+if ! [[ $1 =~ ^[1234]$ ]]; then
     print
 fi
 
