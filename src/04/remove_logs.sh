@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rm *.log 2>/dev/null
+rm -rf logs 2>/dev/null

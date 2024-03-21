@@ -27,13 +27,14 @@ NC='\033[0m'
 RESPONCE_CODES=(200 201 400 401 403 404 500 501 502 503)
 REQUEST_METHODS=(GET POST PUT PATCH DELETE)
 REMOTE_USER=$(echo $USER)
-TIMESTAMP_MY=$(date | awk '{printf "/"$3"/"$4":"}')
+TIMESTAMP_MY="/"$(date +%m)"/"$(date +%Y)":"
 
 if [[ $# -gt 0 ]]; then
         echo -e ${RED}"Скрипт запускается без параметров!"${NC}
         exit
 fi
 
+mkdir logs 2>/dev/null
 for number in 1 2 3 4 5; do
         NUMBER_OF_ENTRIES=$(shuf -i 100-1000 -n 1)
         DATE_TO_WRITE=$(shuf -i 10-28 -n 1)
@@ -42,7 +43,7 @@ for number in 1 2 3 4 5; do
                 GENERATE_IP=$(shuf -i 0-255 -n 4)
                 REMOTE_ADDR=$(echo $GENERATE_IP | tr " " .)
                 #генерируем дату и время
-                GENERATE_TIMESTAMP="["${DATE_TO_WRITE}${TIMESTAMP_MY}$(date | awk '{printf $5" """$7"00]"}')
+                GENERATE_TIMESTAMP="["${DATE_TO_WRITE}${TIMESTAMP_MY}$(date +%M)":"$(date +%H)":"$(date +%S)" "$(date +%z)"]"
                 #генереруем метод запроса
                 GENERATE_REQUEST=$(shuf -i 0-4 -n 1)
                 REQUEST=${REQUEST_METHODS[$GENERATE_REQUEST]}
@@ -59,6 +60,6 @@ for number in 1 2 3 4 5; do
                 HTTP_USER_AGENT=$(head '-'$NUM ./agent_list | tail '+'$NUM)
                 #записываем данные в файл
         
-                echo "$REMOTE_ADDR - - $GENERATE_TIMESTAMP"' "'$REQUEST $AGENTS_URL'"'" $STATUS $BODY_BYTES_SENT"' "-" ''"'$HTTP_USER_AGENT'"' >> ./$number.log
+                echo "$REMOTE_ADDR - - $GENERATE_TIMESTAMP"' "'$REQUEST $AGENTS_URL'"'" $STATUS $BODY_BYTES_SENT"' "-" ''"'$HTTP_USER_AGENT'"' >> logs/$number.log
         done
 done
