@@ -2,7 +2,7 @@
 
 . ./checks.sh
 
-cat ../04/*.log >> whole.log
+cat ../04/logs/*.log >> whole.log
 
 if [[ $1 == 1 ]]; then
     awk -f "sorter.awk" whole.log >result/sorted_by_error_codes.log
