@@ -14,4 +14,4 @@ done <file_generator.log
 
 echo -e ${GREEN}"Состояние памяти после удаления: $(df -h | awk '$6=="/"{print $4}')"
 rm -rf file_generator.log
-echo -e "Файлов удалено и папок удалено: ${FILES_REMOVED}"${NC}
+echo -e "Файлов и папок удалено: ${FILES_REMOVED}"${NC}
